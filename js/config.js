@@ -5,6 +5,20 @@
 
 const CONFIG = {
 
+  // ── Salasanaportti ───────────────────────────────────────────
+  gateTitle: "Arvaa salasana🤭",
+  gateHint: "Vinkki (päivämäärä)",
+  gatePlaceholder: "esim. pp.kk.vvvv",
+  gateButton: "Avaa",
+  // Hyväksytyt vastaukset — vain numerot lasketaan, joten
+  // 15.2.2025, 15/02/2025 ja 1522025 kelpaavat kaikki.
+  gatePasswords: ["15022025", "1522025", "150225", "15225"],
+  gateWrongTexts: [
+    "Väärin meni! 😜 Mieti meitä...",
+    "Ei ihan... kokeile vielä! 💭",
+    "Hmm, kyllä sinä tämän tiedät! ❤️",
+  ],
+
   // ── Aloitus ──────────────────────────────────────────────────
   heroName: "Nella ❤️",
   heroSubtitle: "Hyvää syntymäpäivää Baatiii!!! Tässä pikku lahja🎁",

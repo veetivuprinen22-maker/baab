@@ -12,6 +12,20 @@
 </head>
 <body>
 
+  <!-- ═══════════ SALASANAPORTTI ═══════════ -->
+  <div class="gate" id="gate">
+    <div class="gate-box">
+      <div class="gate-emoji">🔒</div>
+      <h1 id="gate-title"></h1>
+      <p class="gate-hint" id="gate-hint"></p>
+      <form id="gate-form">
+        <input type="text" id="gate-input" autocomplete="off" inputmode="numeric">
+        <button type="submit" class="btn" id="gate-button"></button>
+      </form>
+      <p class="gate-wrong hidden" id="gate-wrong"></p>
+    </div>
+  </div>
+
   <canvas id="hearts-bg" aria-hidden="true"></canvas>
   <canvas id="confetti-canvas" aria-hidden="true"></canvas>
 

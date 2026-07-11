@@ -26,6 +26,50 @@ $("bday-front-text").textContent = CONFIG.bdayFrontText;
 $("bday-inside-text").textContent = CONFIG.bdayInsideText;
 $("footer-text").textContent = CONFIG.footerText;
 
+/* ═══════════ SALASANAPORTTI ═══════════ */
+(() => {
+  const gate = $("gate");
+  const box = gate.querySelector(".gate-box");
+  const input = $("gate-input");
+  const wrong = $("gate-wrong");
+
+  $("gate-title").textContent = CONFIG.gateTitle;
+  $("gate-hint").textContent = CONFIG.gateHint;
+  $("gate-button").textContent = CONFIG.gateButton;
+  input.placeholder = CONFIG.gatePlaceholder;
+
+  const unlock = () => {
+    gate.classList.add("unlocked");
+    document.body.classList.remove("locked");
+    setTimeout(() => gate.remove(), 800);
+  };
+
+  if (sessionStorage.getItem("gate-open") === "1") {
+    unlock();
+  } else {
+    document.body.classList.add("locked");
+  }
+
+  let wrongCount = 0;
+  $("gate-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const digits = input.value.replace(/\D/g, "");
+    if (digits && CONFIG.gatePasswords.includes(digits)) {
+      sessionStorage.setItem("gate-open", "1");
+      unlock();
+      setTimeout(() => confetti(innerWidth / 2, innerHeight / 3, 120), 300);
+    } else {
+      wrong.textContent = CONFIG.gateWrongTexts[wrongCount % CONFIG.gateWrongTexts.length];
+      wrong.classList.remove("hidden");
+      wrongCount++;
+      box.classList.remove("shake");
+      void box.offsetWidth; // käynnistä animaatio uudelleen
+      box.classList.add("shake");
+      input.select();
+    }
+  });
+})();
+
 /* ═══════════ LEIJUVAT SYDÄMET (tausta) ═══════════ */
 (() => {
   const canvas = $("hearts-bg");
