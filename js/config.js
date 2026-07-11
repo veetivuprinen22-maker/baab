@@ -6,7 +6,7 @@
 const CONFIG = {
 
   // ── Aloitus ──────────────────────────────────────────────────
-  heroName: "Rakkaani ❤️",                    // esim. hänen nimensä
+  heroName: "Nella ❤️",
   heroSubtitle: "Hyvää syntymäpäivää! Tein sinulle jotain pientä :)",
 
   // ── Raaputuskuva ─────────────────────────────────────────────
@@ -27,7 +27,7 @@ Veeti ❤️`,
   // ── Aikaa yhdessä ────────────────────────────────────────────
   togetherTitle: "Aikaa yhdessä",
   togetherSubtitle: "Olemme olleet yhdessä jo",
-  relationshipStart: "2022-11-11T00:00:00",   // VAIHDA: seurustelun alkupäivä (VVVV-KK-PP)
+  relationshipStart: "2025-02-15T00:00:00",   // seurustelun alkupäivä (VVVV-KK-PP)
 
   // ── Asioita joita rakastan sinussa ───────────────────────────
   loveListTitle: "Asioita joita rakastan sinussa",
@@ -52,22 +52,22 @@ Veeti ❤️`,
 
   // ── Quiz ─────────────────────────────────────────────────────
   quizTitle: "Kuinka hyvin tunnet meidät?",
-  quizSubtitle: "Pieni visa — katsotaan montako saat oikein!",
+  quizSubtitle: "",
   quiz: [
     {
       question: "Missä näimme ensimmäisen kerran?",
-      options: ["Koulussa", "Baarissa", "Kaverin kautta", "Netissä"],
-      correct: 0,
-    },
-    {
-      question: "Mikä on lempiruokamme yhdessä?",
-      options: ["Pizza", "Sushi", "Tacot", "Pasta"],
+      options: ["Koulussa", "Fontana", "Kaverin kautta", "Netissä"],
       correct: 1,
     },
     {
+      question: "Mikä on lempiruokamme yhdessä?",
+      options: ["Pizza", "Hevarinakki", "Tacot", "Carppis"],
+      correct: 3,
+    },
+    {
       question: "Minkä sarjan olemme katsoneet yhdessä loppuun?",
-      options: ["Vaihtoehto A", "Vaihtoehto B", "Vaihtoehto C", "Vaihtoehto D"],
-      correct: 2,
+      options: ["Frendit", "Young Sheldon", "You", "Big Bang Theory"],
+      correct: 1,
     },
     // Lisää kysymyksiä samalla kaavalla. "correct" on oikean
     // vaihtoehdon numero alkaen nollasta (0 = ensimmäinen).
