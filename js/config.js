@@ -7,7 +7,7 @@ const CONFIG = {
 
   // ── Aloitus ──────────────────────────────────────────────────
   heroName: "Nella ❤️",
-  heroSubtitle: "Hyvää syntymäpäivää! Tein sinulle jotain pientä :)",
+  heroSubtitle: "Hyvää syntymäpäivää Baatiii!!! Tässä pikku lahja🎁",
 
   // ── Raaputuskuva ─────────────────────────────────────────────
   scratchTitle: "Eikö me ollakin söpöjä?",
