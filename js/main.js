@@ -193,14 +193,20 @@ const confetti = (() => {
     return { x: t.clientX - r.left, y: t.clientY - r.top };
   };
 
+  let last = null;
   const scratch = (e) => {
     if (revealed || !scratching) return;
     started = true;
     if (!canvas.width) return;
     const { x, y } = pos(e);
+    ctx.lineWidth = 110;
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
     ctx.beginPath();
-    ctx.arc(x, y, 34, 0, Math.PI * 2);
-    ctx.fill();
+    ctx.moveTo(last ? last.x : x, last ? last.y : y);
+    ctx.lineTo(x, y);
+    ctx.stroke();
+    last = { x, y };
     hint.classList.add("faded");
     e.preventDefault();
   };
@@ -212,7 +218,7 @@ const confetti = (() => {
     for (let i = 3; i < data.length; i += 4 * 24) {
       if (data[i] === 0) cleared++;
     }
-    if (cleared / (data.length / (4 * 24)) > 0.45) {
+    if (cleared / (data.length / (4 * 24)) > 0.3) {
       revealed = true;
       canvas.style.transition = "opacity 0.8s ease";
       canvas.style.opacity = "0";
@@ -221,8 +227,8 @@ const confetti = (() => {
     }
   };
 
-  const start = (e) => { scratching = true; scratch(e); };
-  const end = () => { scratching = false; checkReveal(); };
+  const start = (e) => { scratching = true; last = null; scratch(e); };
+  const end = () => { scratching = false; last = null; checkReveal(); };
 
   canvas.addEventListener("mousedown", start);
   canvas.addEventListener("mousemove", scratch);
