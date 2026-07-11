@@ -73,7 +73,7 @@ Veeti ❤️`,
     // vaihtoehdon numero alkaen nollasta (0 = ensimmäinen).
   ],
   quizVerdicts: {
-    perfect: "Täydet pisteet! Sinä todella tunnet meidät. 🥇❤️",
+    perfect: "Täydet pisteet! 🥇❤️",
     good: "Melkein täydet! Aika hyvin muistettu. 💘",
     ok: "Ihan hyvä — mutta taidetaan tarvita treffi-ilta kertaamaan! 😄",
   },
