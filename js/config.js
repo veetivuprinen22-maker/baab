@@ -51,7 +51,7 @@ Veeti ❤️`,
   ],
 
   // ── Quiz ─────────────────────────────────────────────────────
-  quizTitle: "Kuinka hyvin tunnet meidät?",
+  quizTitle: "Pikku visailu hihi😄",
   quizSubtitle: "",
   quiz: [
     {
