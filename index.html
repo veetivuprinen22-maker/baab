@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Hyvää syntymäpäivää ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <canvas id="hearts-bg" aria-hidden="true"></canvas>
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- ═══════════ 1. ALOITUS + RAAPUTUSKUVA ═══════════ -->
+  <header class="hero">
+    <h1 id="hero-name"></h1>
+    <p id="hero-subtitle" class="hero-subtitle"></p>
+
+    <section class="card scratch-section">
+      <h2 id="scratch-title"></h2>
+      <div class="scratch-wrap">
+        <img id="scratch-photo" alt="Yhteinen kuvamme">
+        <canvas id="scratch-canvas"></canvas>
+        <div class="scratch-hint" id="scratch-hint">
+          <span>🖐️ Raaputa tästä! ✨</span>
+          <small>Käytä sormea tai hiirtä</small>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+
+    <!-- ═══════════ 2. RAKKAUSKIRJE ═══════════ -->
+    <section class="card letter-section">
+      <h2 id="letter-title"></h2>
+      <div class="envelope-scene">
+        <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Avaa kirje">
+          <div class="envelope-back"></div>
+          <div class="letter-paper" id="letter-paper">
+            <div class="letter-text" id="letter-text"></div>
+          </div>
+          <div class="envelope-front"></div>
+          <div class="envelope-flap"></div>
+          <div class="envelope-seal">❤</div>
+        </div>
+        <p class="envelope-cta" id="envelope-cta">Avaa klikkaamalla</p>
+      </div>
+    </section>
+
+    <!-- ═══════════ 3. AIKAA YHDESSÄ ═══════════ -->
+    <section class="card together-section">
+      <h2 id="together-title"></h2>
+      <p class="section-sub" id="together-subtitle"></p>
+      <div class="time-grid time-grid-top">
+        <div class="time-box"><span class="time-num" id="t-years">00</span><span class="time-label">Vuotta</span></div>
+        <div class="time-box"><span class="time-num" id="t-months">00</span><span class="time-label">Kuukautta</span></div>
+        <div class="time-box"><span class="time-num" id="t-days">00</span><span class="time-label">Päivää</span></div>
+      </div>
+      <div class="time-grid time-grid-bottom">
+        <div class="time-box small"><span class="time-num" id="t-hours">00</span><span class="time-label">Tuntia</span></div>
+        <div class="time-box small"><span class="time-num" id="t-minutes">00</span><span class="time-label">Minuuttia</span></div>
+        <div class="time-box small"><span class="time-num" id="t-seconds">00</span><span class="time-label">Sekuntia</span></div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 4. ASIOITA JOITA RAKASTAN SINUSSA ═══════════ -->
+    <section class="card love-list-section">
+      <h2 id="lovelist-title"></h2>
+      <p class="section-sub" id="lovelist-subtitle"></p>
+      <ul class="love-list" id="love-list"></ul>
+    </section>
+
+    <!-- ═══════════ 5. KUVAGALLERIA ═══════════ -->
+    <section class="card gallery-section">
+      <h2 id="gallery-title"></h2>
+      <p class="section-sub" id="gallery-subtitle"></p>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <!-- ═══════════ 6. QUIZ ═══════════ -->
+    <section class="card quiz-section">
+      <h2 id="quiz-title"></h2>
+      <p class="section-sub" id="quiz-subtitle"></p>
+      <div id="quiz-box">
+        <div id="quiz-progress" class="quiz-progress"></div>
+        <p id="quiz-question" class="quiz-question"></p>
+        <div id="quiz-options" class="quiz-options"></div>
+      </div>
+      <div id="quiz-result" class="quiz-result hidden">
+        <p class="quiz-score" id="quiz-score"></p>
+        <p class="quiz-verdict" id="quiz-verdict"></p>
+        <button class="btn" id="quiz-restart">Pelaa uudestaan</button>
+      </div>
+    </section>
+
+    <!-- ═══════════ 7. MUISTIPELI ═══════════ -->
+    <section class="card memory-section">
+      <h2 id="memory-title"></h2>
+      <p class="section-sub" id="memory-subtitle"></p>
+      <div class="memory-stats">
+        <span>Siirrot: <b id="memory-moves">0</b></span>
+        <button class="btn btn-small" id="memory-restart">Aloita alusta</button>
+      </div>
+      <div class="memory-grid" id="memory-grid"></div>
+      <p class="memory-win hidden" id="memory-win"></p>
+    </section>
+
+    <!-- ═══════════ 8. PALKINTOPYÖRÄ ═══════════ -->
+    <section class="card wheel-section">
+      <h2 id="wheel-title"></h2>
+      <p class="section-sub" id="wheel-subtitle"></p>
+      <div class="wheel-wrap">
+        <div class="wheel-pointer"></div>
+        <canvas id="wheel-canvas" width="500" height="500"></canvas>
+      </div>
+      <button class="btn" id="wheel-spin">Pyöräytä!</button>
+      <p class="wheel-result hidden" id="wheel-result"></p>
+    </section>
+
+    <!-- ═══════════ 9. SYNTTÄRIKORTTI ═══════════ -->
+    <section class="card bday-section">
+      <h2 id="bday-title"></h2>
+      <div class="bday-scene">
+        <div class="bday-card" id="bday-card" role="button" tabindex="0" aria-label="Avaa kortti">
+          <div class="bday-card-front">
+            <span class="bday-emoji">🎂</span>
+            <span class="bday-front-text" id="bday-front-text"></span>
+          </div>
+          <div class="bday-card-inside">
+            <div class="bday-inside-text" id="bday-inside-text"></div>
+          </div>
+        </div>
+        <p class="envelope-cta" id="bday-cta">Avaa kortti 🎁</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" id="footer-text"></footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+// ═══════════════════════════════════════════════════════════════
+//  MUOKKAA TÄTÄ TIEDOSTOA — kaikki sivun sisältö on tässä!
+//  Vaihda tekstit, päivämäärä, kuvat ja kysymykset omiksesi.
+// ═══════════════════════════════════════════════════════════════
+
+const CONFIG = {
+
+  // ── Aloitus ──────────────────────────────────────────────────
+  heroName: "Rakkaani ❤️",                    // esim. hänen nimensä
+  heroSubtitle: "Hyvää syntymäpäivää! Tein sinulle jotain pientä :)",
+
+  // ── Raaputuskuva ─────────────────────────────────────────────
+  scratchTitle: "Eikö me ollakin söpöjä?",
+  scratchPhoto: "img/meidan-kuva.svg",        // vaihda omaan kuvaan (img-kansioon), esim. "img/me.jpg"
+
+  // ── Rakkauskirje ─────────────────────────────────────────────
+  letterTitle: "Kirje sinulle",
+  letterText: `Rakas,
+
+tähän tulee sinun oma kirjeesi hänelle.
+Kirjoita niin monta kappaletta kuin haluat —
+kirje rullaa tarvittaessa.
+
+Sinun,
+Veeti ❤️`,
+
+  // ── Aikaa yhdessä ────────────────────────────────────────────
+  togetherTitle: "Aikaa yhdessä",
+  togetherSubtitle: "Olemme olleet yhdessä jo",
+  relationshipStart: "2022-11-11T00:00:00",   // VAIHDA: seurustelun alkupäivä (VVVV-KK-PP)
+
+  // ── Asioita joita rakastan sinussa ───────────────────────────
+  loveListTitle: "Asioita joita rakastan sinussa",
+  loveListSubtitle: "Tässä pieni osa niistä",
+  loveList: [
+    { emoji: "🌹", text: "Tapa jolla hymysi valaisee koko huoneen." },
+    { emoji: "❤️", text: "Se, että tiedät aina mitä sanoa kun minulla on huono päivä." },
+    { emoji: "💕", text: "Hassu puolesi, joka saa minut aina nauramaan." },
+    { emoji: "✨", text: "Huomaat minusta pienet yksityiskohdat, jotka muilta jää huomaamatta." },
+    { emoji: "🫶", text: "Lisää omia kohtia tähän listaan niin monta kuin haluat!" },
+  ],
+
+  // ── Kuvagalleria ─────────────────────────────────────────────
+  galleryTitle: "Meidän hetkiä",
+  gallerySubtitle: "Klikkaa kuvaa nähdäksesi sen isompana",
+  gallery: [
+    // Lisää kuvia img-kansioon ja listaa ne tähän:
+    { src: "img/galleria-1.svg", caption: "Tähän kuvateksti" },
+    { src: "img/galleria-2.svg", caption: "Toinen muisto" },
+    { src: "img/galleria-3.svg", caption: "Kolmas muisto" },
+  ],
+
+  // ── Quiz ─────────────────────────────────────────────────────
+  quizTitle: "Kuinka hyvin tunnet meidät?",
+  quizSubtitle: "Pieni visa — katsotaan montako saat oikein!",
+  quiz: [
+    {
+      question: "Missä näimme ensimmäisen kerran?",
+      options: ["Koulussa", "Baarissa", "Kaverin kautta", "Netissä"],
+      correct: 0,
+    },
+    {
+      question: "Mikä on lempiruokamme yhdessä?",
+      options: ["Pizza", "Sushi", "Tacot", "Pasta"],
+      correct: 1,
+    },
+    {
+      question: "Minkä sarjan olemme katsoneet yhdessä loppuun?",
+      options: ["Vaihtoehto A", "Vaihtoehto B", "Vaihtoehto C", "Vaihtoehto D"],
+      correct: 2,
+    },
+    // Lisää kysymyksiä samalla kaavalla. "correct" on oikean
+    // vaihtoehdon numero alkaen nollasta (0 = ensimmäinen).
+  ],
+  quizVerdicts: {
+    perfect: "Täydet pisteet! Sinä todella tunnet meidät. 🥇❤️",
+    good: "Melkein täydet! Aika hyvin muistettu. 💘",
+    ok: "Ihan hyvä — mutta taidetaan tarvita treffi-ilta kertaamaan! 😄",
+  },
+
+  // ── Muistipeli ───────────────────────────────────────────────
+  memoryTitle: "Muistipeli",
+  memorySubtitle: "Etsi parit! Voit myöhemmin vaihtaa emojit meidän kuviin.",
+  // Joko emojeja TAI kuvapolkuja (esim. "img/pari-1.jpg"). 6 kpl = 12 korttia.
+  memoryItems: ["❤️", "🌹", "🐻", "🍕", "🎬", "☕"],
+  memoryWinText: "Löysit kaikki parit! Aivan kuten löysit minut. 😌❤️",
+
+  // ── Palkintopyörä ────────────────────────────────────────────
+  wheelTitle: "Onnenpyörä!",
+  wheelSubtitle: "Pyöräytä ja voita palkinto — lunastettavissa minulta milloin vain.",
+  wheelPrizes: [
+    { label: "Pusukuponki", color: "#5e35b1" },
+    { label: "Rakkauskirje", color: "#8e6c88" },
+    { label: "Leffailta", color: "#c2568c" },
+    { label: "Hieronta", color: "#7fcdc7" },
+    { label: "Iso hali", color: "#b08398" },
+    { label: "Suklaarasia", color: "#f2e263" },
+    { label: "Yllätystreffit", color: "#69d2a0" },
+  ],
+
+  // ── Synttärikortti ───────────────────────────────────────────
+  bdayTitle: "Vielä yksi juttu...",
+  bdayFrontText: "Hyvää synttäriä!",
+  bdayInsideText: `Onnea ikiomalle tytölleni! 🎉
+
+Tähän voit kirjoittaa kortin sisään
+tulevan henkilökohtaisen viestin.
+
+Rakkaudella,
+Veeti`,
+
+  // ── Alatunniste ──────────────────────────────────────────────
+  footerText: "Tehty rakkaudella ❤️ Veeti",
+};
