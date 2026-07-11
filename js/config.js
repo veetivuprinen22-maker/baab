@@ -23,6 +23,12 @@ const CONFIG = {
   heroName: "Nella ❤️",
   heroSubtitle: "Hyvää syntymäpäivää Baatiii!!! Tässä pikku lahja🎁",
 
+  // ── Kakku ja kynttilät ───────────────────────────────────────
+  cakeTitle: "Puhalla kynttilät! 🎂",
+  cakeSubtitle: "Sammuta kynttilät napauttamalla niitä ja toivo jotain",
+  cakeCandles: 5,                             // kynttilöiden määrä (esim. ikä)
+  cakeDoneText: "Kaikki sammutettu! Toiveesi on matkalla... ✨❤️",
+
   // ── Raaputuskuva ─────────────────────────────────────────────
   scratchTitle: "Eikö me ollakin söpöjä?",
   scratchPhoto: "img/meidan-kuva.svg",        // vaihda omaan kuvaan (img-kansioon), esim. "img/me.jpg"

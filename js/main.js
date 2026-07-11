@@ -186,6 +186,34 @@ const confetti = (() => {
   };
 })();
 
+/* ═══════════ KAKKU JA KYNTTILÄT ═══════════ */
+(() => {
+  $("cake-title").textContent = CONFIG.cakeTitle;
+  $("cake-subtitle").textContent = CONFIG.cakeSubtitle;
+  const holder = $("candles");
+  const doneEl = $("cake-done");
+  let out = 0;
+
+  for (let i = 0; i < CONFIG.cakeCandles; i++) {
+    const candle = document.createElement("button");
+    candle.className = "candle";
+    candle.setAttribute("aria-label", "Sammuta kynttilä");
+    candle.innerHTML = '<span class="flame"></span>';
+    candle.addEventListener("click", () => {
+      if (candle.classList.contains("out")) return;
+      candle.classList.add("out");
+      out++;
+      if (out === CONFIG.cakeCandles) {
+        doneEl.textContent = CONFIG.cakeDoneText;
+        doneEl.classList.remove("hidden");
+        const r = holder.getBoundingClientRect();
+        confetti(r.left + r.width / 2, r.top, 160);
+      }
+    });
+    holder.appendChild(candle);
+  }
+})();
+
 /* ═══════════ RAAPUTUSKUVA ═══════════ */
 (() => {
   const wrap = document.querySelector(".scratch-wrap");
