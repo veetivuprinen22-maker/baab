@@ -79,8 +79,9 @@ Veeti ❤️`,
   mapSubtitle: "Napauta sydämiä nähdäksesi mitä niissä tapahtui",
   // Kerro paikat (nimi + mitä siellä tapahtui), niin lisään koordinaatit.
   mapPlaces: [
-    { name: "Fontana", text: "Täällä näimme ensimmäisen kerran 💫", lat: 60.1699, lng: 24.9384 },
-    { name: "Esimerkkipaikka", text: "Tähän joku yhteinen muisto", lat: 61.4978, lng: 23.7610 },
+    { name: "Fontana, Vaasa", text: "Täällä näimme ensimmäisen kerran 11.9.2024 💫", lat: 63.0963, lng: 21.6147 },
+    // Lisää paikkoja samalla kaavalla:
+    // { name: "Paikan nimi", text: "Mitä siellä tapahtui", lat: 0.0, lng: 0.0 },
   ],
 
   // ── Quiz ─────────────────────────────────────────────────────
