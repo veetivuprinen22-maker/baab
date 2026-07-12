@@ -444,6 +444,42 @@ const confetti = (() => {
   });
 })();
 
+/* ═══════════ KARTTA ═══════════ */
+(() => {
+  $("map-title").textContent = CONFIG.mapTitle;
+  $("map-subtitle").textContent = CONFIG.mapSubtitle;
+  if (typeof L === "undefined") return; // Leaflet ei latautunut (ei verkkoa)
+
+  const map = L.map("map", { scrollWheelZoom: false });
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+
+  const icon = L.divIcon({
+    className: "map-pin",
+    html: "❤️",
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -16],
+  });
+
+  const bounds = [];
+  CONFIG.mapPlaces.forEach(({ name, text, lat, lng }) => {
+    const marker = L.marker([lat, lng], { icon }).addTo(map);
+    const content = document.createElement("div");
+    const b = document.createElement("b");
+    b.textContent = name;
+    const p = document.createElement("div");
+    p.textContent = text;
+    content.append(b, p);
+    marker.bindPopup(content);
+    bounds.push([lat, lng]);
+  });
+
+  if (bounds.length > 1) map.fitBounds(bounds, { padding: [50, 50] });
+  else map.setView(bounds[0] || [60.17, 24.94], 12);
+})();
+
 /* ═══════════ QUIZ ═══════════ */
 (() => {
   const qEl = $("quiz-question");

@@ -74,6 +74,15 @@ Veeti ❤️`,
     { src: "img/galleria-3.svg", caption: "Kolmas muisto" },
   ],
 
+  // ── Kartta ───────────────────────────────────────────────────
+  mapTitle: "Meidän paikat 🗺️",
+  mapSubtitle: "Napauta sydämiä nähdäksesi mitä niissä tapahtui",
+  // Kerro paikat (nimi + mitä siellä tapahtui), niin lisään koordinaatit.
+  mapPlaces: [
+    { name: "Fontana", text: "Täällä näimme ensimmäisen kerran 💫", lat: 60.1699, lng: 24.9384 },
+    { name: "Esimerkkipaikka", text: "Tähän joku yhteinen muisto", lat: 61.4978, lng: 23.7610 },
+  ],
+
   // ── Quiz ─────────────────────────────────────────────────────
   quizTitle: "Pikku visailu hihi😄",
   quizSubtitle: "",

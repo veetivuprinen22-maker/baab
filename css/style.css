@@ -624,6 +624,28 @@ body.locked { overflow: hidden; }
 
 .lightbox p { color: #fff; font-size: 1.15rem; margin-top: 14px; }
 
+/* ═══════════ KARTTA ═══════════ */
+#map {
+  height: min(440px, 60vh);
+  border-radius: 18px;
+  border: 1.5px solid #f6c6ce;
+  box-shadow: var(--shadow);
+  z-index: 1; /* pysyy salasanaportin ja lightboxin alla */
+}
+
+.map-pin {
+  font-size: 30px;
+  line-height: 1;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.leaflet-popup-content {
+  font-family: "Nunito", sans-serif;
+  color: var(--text);
+}
+
+.leaflet-popup-content b { color: var(--primary); }
+
 /* ═══════════ QUIZ ═══════════ */
 .quiz-progress {
   font-weight: 800;

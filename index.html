@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Caveat:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
 
@@ -117,6 +118,13 @@
       <div class="gallery" id="gallery"></div>
     </section>
 
+    <!-- ═══════════ KARTTA ═══════════ -->
+    <section class="card map-section">
+      <h2 id="map-title"></h2>
+      <p class="section-sub" id="map-subtitle"></p>
+      <div id="map"></div>
+    </section>
+
     <!-- ═══════════ 6. QUIZ ═══════════ -->
     <section class="card quiz-section">
       <h2 id="quiz-title"></h2>
@@ -178,6 +186,7 @@
 
   <footer class="footer" id="footer-text"></footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="js/config.js"></script>
   <script src="js/main.js"></script>
 </body>
