@@ -80,7 +80,8 @@ Veeti ❤️`,
   // Kerro paikat (nimi + mitä siellä tapahtui), niin lisään koordinaatit.
   mapPlaces: [
     { name: "Fontana, Vaasa", text: "Täällä näimme ensimmäisen kerran 11.9.2024 💫", lat: 63.0963, lng: 21.6147 },
-    // Lisää paikkoja samalla kaavalla:
+    { name: "Babula <3", text: "", emoji: "🏠", lat: 63.0941, lng: 21.6178 },
+    // Lisää paikkoja samalla kaavalla ("emoji" on vapaaehtoinen, oletus ❤️):
     // { name: "Paikan nimi", text: "Mitä siellä tapahtui", lat: 0.0, lng: 0.0 },
   ],
 

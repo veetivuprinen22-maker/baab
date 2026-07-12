@@ -455,23 +455,26 @@ const confetti = (() => {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map);
 
-  const icon = L.divIcon({
+  const makeIcon = (emoji) => L.divIcon({
     className: "map-pin",
-    html: "❤️",
+    html: emoji || "❤️",
     iconSize: [30, 30],
     iconAnchor: [15, 15],
     popupAnchor: [0, -16],
   });
 
   const bounds = [];
-  CONFIG.mapPlaces.forEach(({ name, text, lat, lng }) => {
-    const marker = L.marker([lat, lng], { icon }).addTo(map);
+  CONFIG.mapPlaces.forEach(({ name, text, lat, lng, emoji }) => {
+    const marker = L.marker([lat, lng], { icon: makeIcon(emoji) }).addTo(map);
     const content = document.createElement("div");
     const b = document.createElement("b");
     b.textContent = name;
-    const p = document.createElement("div");
-    p.textContent = text;
-    content.append(b, p);
+    content.append(b);
+    if (text) {
+      const p = document.createElement("div");
+      p.textContent = text;
+      content.append(p);
+    }
     marker.bindPopup(content);
     bounds.push([lat, lng]);
   });
