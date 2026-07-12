@@ -84,8 +84,9 @@ Veeti ❤️`,
     { name: "The Grand Resort, Hurghada", text: "Ensimmäinen lomamatkamme 🌴", emoji: "✈️", lat: 27.1747, lng: 33.8231 },
     { name: "Sofia, Bulgaria", text: "Toinen lomamatkamme 🇧🇬", emoji: "✈️", lat: 42.6977, lng: 23.3219 },
     { name: "Niš, Serbia", text: "Roadtrip! Ajoimme tänne Sofiasta 🛣️", emoji: "🚗", lat: 43.3209, lng: 21.8958 },
-    // Lisää paikkoja samalla kaavalla ("emoji" on vapaaehtoinen, oletus ❤️):
-    // { name: "Paikan nimi", text: "Mitä siellä tapahtui", lat: 0.0, lng: 0.0 },
+    // Lisää paikkoja samalla kaavalla. "emoji" (oletus ❤️) ja "img" ovat
+    // vapaaehtoisia — img näyttää kuvan kuplassa:
+    // { name: "Paikka", text: "Muisto", emoji: "⭐", img: "img/kuva.jpg", lat: 0.0, lng: 0.0 },
   ],
 
   // ── Quiz ─────────────────────────────────────────────────────

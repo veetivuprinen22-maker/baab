@@ -464,9 +464,16 @@ const confetti = (() => {
   });
 
   const bounds = [];
-  CONFIG.mapPlaces.forEach(({ name, text, lat, lng, emoji }) => {
+  CONFIG.mapPlaces.forEach(({ name, text, lat, lng, emoji, img }) => {
     const marker = L.marker([lat, lng], { icon: makeIcon(emoji) }).addTo(map);
     const content = document.createElement("div");
+    if (img) {
+      const image = document.createElement("img");
+      image.src = img;
+      image.alt = name;
+      image.className = "map-popup-img";
+      content.append(image);
+    }
     const b = document.createElement("b");
     b.textContent = name;
     content.append(b);

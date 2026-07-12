@@ -646,6 +646,14 @@ body.locked { overflow: hidden; }
 
 .leaflet-popup-content b { color: var(--primary); }
 
+.map-popup-img {
+  display: block;
+  width: 200px;
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
 /* ═══════════ QUIZ ═══════════ */
 .quiz-progress {
   font-weight: 800;
