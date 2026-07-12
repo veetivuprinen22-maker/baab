@@ -498,6 +498,32 @@ body.locked { overflow: hidden; }
   color: #7a5560;
 }
 
+/* ═══════════ KUKKANAPPI ═══════════ */
+.flower-section {
+  text-align: center;
+  max-width: 860px;
+  margin: 48px auto;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.flower-btn {
+  font-family: inherit;
+  font-size: clamp(1.1rem, 4vw, 1.5rem);
+  font-weight: 800;
+  color: var(--primary);
+  background: #f4dbe0;
+  border: 2.5px solid var(--primary);
+  border-radius: 26px;
+  padding: 22px 42px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.flower-btn:hover { background: #f9e7eb; transform: scale(1.04); }
+.flower-btn:active { transform: scale(0.96); }
+
 /* ═══════════ RAKKAUSLISTA ═══════════ */
 .love-list {
   list-style: none;

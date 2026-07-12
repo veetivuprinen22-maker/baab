@@ -49,6 +49,10 @@ Veeti ❤️`,
   togetherSubtitle: "Olemme olleet yhdessä jo",
   relationshipStart: "2025-02-15T00:00:00",   // seurustelun alkupäivä (VVVV-KK-PP)
 
+  // ── Kukkanappi ───────────────────────────────────────────────
+  flowerButtonText: "Tästä vähän kukkia baatille <3",
+  flowerEmojis: ["🌸", "🌹", "🌷", "🌻", "🌼", "💐", "🪻", "🌺"],
+
   // ── Asioita joita rakastan sinussa ───────────────────────────
   loveListTitle: "Asioita joita rakastan sinussa",
   loveListSubtitle: "Tässä pieni osa niistä",

@@ -156,15 +156,22 @@ const confetti = (() => {
       ctx.translate(p.x, p.y);
       ctx.rotate(p.rot);
       ctx.globalAlpha = Math.min(1, p.life / 40);
-      ctx.fillStyle = p.color;
-      ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.55);
+      if (p.emoji) {
+        ctx.font = `${p.size}px serif`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(p.emoji, 0, 0);
+      } else {
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.55);
+      }
       ctx.restore();
     });
     if (parts.length) requestAnimationFrame(tick);
     else running = false;
   };
 
-  return (x = innerWidth / 2, y = innerHeight / 2, count = 140) => {
+  const spawn = (x, y, count, emojis) => {
     for (let i = 0; i < count; i++) {
       const angle = Math.random() * Math.PI * 2;
       const power = 3 + Math.random() * 9;
@@ -172,10 +179,11 @@ const confetti = (() => {
         x, y,
         vx: Math.cos(angle) * power,
         vy: Math.sin(angle) * power - 4,
-        vr: (Math.random() - 0.5) * 0.3,
-        rot: Math.random() * Math.PI,
-        size: 6 + Math.random() * 8,
+        vr: (Math.random() - 0.5) * (emojis ? 0.12 : 0.3),
+        rot: emojis ? (Math.random() - 0.5) * 0.6 : Math.random() * Math.PI,
+        size: emojis ? 20 + Math.random() * 18 : 6 + Math.random() * 8,
         color: colors[Math.floor(Math.random() * colors.length)],
+        emoji: emojis ? emojis[Math.floor(Math.random() * emojis.length)] : null,
         life: 90 + Math.random() * 60,
       });
     }
@@ -184,6 +192,11 @@ const confetti = (() => {
       requestAnimationFrame(tick);
     }
   };
+
+  const fire = (x = innerWidth / 2, y = innerHeight / 2, count = 140) =>
+    spawn(x, y, count, null);
+  fire.emoji = (x, y, count, emojis) => spawn(x, y, count, emojis);
+  return fire;
 })();
 
 /* ═══════════ KAKKU JA KYNTTILÄT ═══════════ */
@@ -355,6 +368,21 @@ const confetti = (() => {
   };
   update();
   setInterval(update, 1000);
+})();
+
+/* ═══════════ KUKKANAPPI ═══════════ */
+(() => {
+  const btn = $("flower-btn");
+  btn.textContent = CONFIG.flowerButtonText;
+  btn.addEventListener("click", () => {
+    const r = btn.getBoundingClientRect();
+    confetti.emoji(r.left + r.width / 2, r.top + r.height / 2, 60, CONFIG.flowerEmojis);
+    // sade ylhäältä pienellä viiveellä
+    setTimeout(() => {
+      confetti.emoji(innerWidth * 0.3, -20, 25, CONFIG.flowerEmojis);
+      confetti.emoji(innerWidth * 0.7, -20, 25, CONFIG.flowerEmojis);
+    }, 350);
+  });
 })();
 
 /* ═══════════ RAKKAUSLISTA ═══════════ */
