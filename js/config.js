@@ -81,6 +81,7 @@ Veeti ❤️`,
   mapPlaces: [
     { name: "Fontana, Vaasa", text: "Täällä näimme ensimmäisen kerran 11.9.2024 💫", lat: 63.0963, lng: 21.6147 },
     { name: "Babula <3", text: "", emoji: "🏠", lat: 63.0941, lng: 21.6178 },
+    { name: "The Grand Resort, Hurghada", text: "Ensimmäinen lomamatkamme 🌴", emoji: "✈️", lat: 27.1747, lng: 33.8231 },
     // Lisää paikkoja samalla kaavalla ("emoji" on vapaaehtoinen, oletus ❤️):
     // { name: "Paikan nimi", text: "Mitä siellä tapahtui", lat: 0.0, lng: 0.0 },
   ],
