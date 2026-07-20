@@ -203,6 +203,7 @@ const confetti = (() => {
 (() => {
   $("cake-title").textContent = CONFIG.cakeTitle;
   $("cake-subtitle").textContent = CONFIG.cakeSubtitle;
+  $("cake-text").textContent = CONFIG.cakeText;
   const holder = $("candles");
   const doneEl = $("cake-done");
   let out = 0;
@@ -385,30 +386,43 @@ const confetti = (() => {
   });
 })();
 
-/* ═══════════ RAKKAUSLISTA ═══════════ */
+/* ═══════════ RAKKAUSSIVUT ═══════════ */
 (() => {
-  const list = $("love-list");
-  CONFIG.loveList.forEach(({ emoji, text }) => {
-    const li = document.createElement("li");
-    li.innerHTML = `<span class="love-emoji"></span><span class="love-text"></span>`;
-    li.querySelector(".love-emoji").textContent = emoji;
-    li.querySelector(".love-text").textContent = text;
-    list.appendChild(li);
+  const textEl = $("love-page-text");
+  const dotsEl = $("love-dots");
+  const prevBtn = $("love-prev");
+  const nextBtn = $("love-next");
+  const pages = CONFIG.lovePages;
+  let index = 0;
+
+  pages.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.className = "love-dot";
+    dot.setAttribute("aria-label", `Sivu ${i + 1}`);
+    dot.addEventListener("click", () => show(i));
+    dotsEl.appendChild(dot);
   });
 
-  const observer = new IntersectionObserver(
-    (entries) => entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        e.target.classList.add("visible");
-        observer.unobserve(e.target);
-      }
-    }),
-    { threshold: 0.3 }
-  );
-  list.querySelectorAll("li").forEach((li, i) => {
-    li.style.transitionDelay = `${(i % 5) * 0.1}s`;
-    observer.observe(li);
-  });
+  const show = (i) => {
+    index = Math.max(0, Math.min(pages.length - 1, i));
+    textEl.classList.add("fading");
+    setTimeout(() => {
+      textEl.textContent = pages[index];
+      textEl.classList.remove("fading");
+    }, 250);
+    dotsEl.querySelectorAll(".love-dot").forEach((d, di) =>
+      d.classList.toggle("active", di === index));
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === pages.length - 1;
+  };
+
+  prevBtn.addEventListener("click", () => show(index - 1));
+  nextBtn.addEventListener("click", () => show(index + 1));
+
+  textEl.textContent = pages[0];
+  dotsEl.querySelector(".love-dot").classList.add("active");
+  prevBtn.disabled = true;
+  nextBtn.disabled = pages.length < 2;
 })();
 
 /* ═══════════ GALLERIA ═══════════ */

@@ -28,6 +28,7 @@ const CONFIG = {
   cakeSubtitle: "Sammuta kynttilät napauttamalla niitä ja toivo jotain",
   cakeCandles: 5,                             // kynttilöiden määrä (esim. ikä)
   cakeDoneText: "Kaikki sammutettu! Toiveesi on matkalla... ✨❤️",
+  cakeText: "Nella ❤️",                       // teksti kakun kyljessä
 
   // ── Raaputuskuva ─────────────────────────────────────────────
   scratchTitle: "Eikö me ollakin söpöjä?",
@@ -54,14 +55,13 @@ Veeti ❤️`,
   flowerEmojis: ["🌸", "🌹", "🌷", "🌻", "🌼", "💐", "🪻", "🌺"],
 
   // ── Asioita joita rakastan sinussa ───────────────────────────
-  loveListTitle: "Asioita joita rakastan sinussa",
-  loveListSubtitle: "Tässä pieni osa niistä",
-  loveList: [
-    { emoji: "🌹", text: "Tapa jolla hymysi valaisee koko huoneen." },
-    { emoji: "❤️", text: "Se, että tiedät aina mitä sanoa kun minulla on huono päivä." },
-    { emoji: "💕", text: "Hassu puolesi, joka saa minut aina nauramaan." },
-    { emoji: "✨", text: "Huomaat minusta pienet yksityiskohdat, jotka muilta jää huomaamatta." },
-    { emoji: "🫶", text: "Lisää omia kohtia tähän listaan niin monta kuin haluat!" },
+  loveListTitle: "Kaksi asiaa, mitä rakastan sussa",
+  loveListSubtitle: "",
+  // Sivut näytetään yksi kerrallaan — selaa nuolilla. Lisää niin monta kuin haluat.
+  lovePages: [
+    "Sun silmät 👀",
+    "Sun hymy 😊",
+    "Puijjasinn. Niitä on paljon enemmän 😝",
   ],
 
   // ── Kuvagalleria ─────────────────────────────────────────────

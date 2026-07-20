@@ -44,7 +44,7 @@
         <div class="cake">
           <div class="cake-layer cake-top"></div>
           <div class="cake-layer cake-mid"></div>
-          <div class="cake-layer cake-bottom"></div>
+          <div class="cake-layer cake-bottom"><span class="cake-text" id="cake-text"></span></div>
         </div>
         <div class="cake-plate"></div>
       </div>
@@ -108,7 +108,14 @@
     <section class="card love-list-section">
       <h2 id="lovelist-title"></h2>
       <p class="section-sub" id="lovelist-subtitle"></p>
-      <ul class="love-list" id="love-list"></ul>
+      <div class="love-pager">
+        <p class="love-page-text" id="love-page-text"></p>
+        <div class="love-dots" id="love-dots"></div>
+        <div class="love-nav">
+          <button class="btn btn-small" id="love-prev">‹ Edellinen</button>
+          <button class="btn btn-small" id="love-next">Seuraava ›</button>
+        </div>
+      </div>
     </section>
 
     <!-- ═══════════ 5. KUVAGALLERIA ═══════════ -->
