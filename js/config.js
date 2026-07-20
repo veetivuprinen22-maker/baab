@@ -129,7 +129,6 @@ Veeti ❤️`,
   wheelSubtitle: "Pyöräytä ja voita palkinto — lunastettavissa minulta milloin vain.",
   wheelPrizes: [
     { label: "Pusukuponki", color: "#5e35b1" },
-    { label: "Rakkauskirje", color: "#8e6c88" },
     { label: "Leffailta", color: "#c2568c" },
     { label: "Hieronta", color: "#7fcdc7" },
     { label: "Iso hali", color: "#b08398" },
