@@ -458,6 +458,156 @@ const confetti = (() => {
   });
 })();
 
+/* ═══════════ SYDÄNSADE-PELI ═══════════ */
+(() => {
+  $("game-title").textContent = CONFIG.gameTitle;
+  $("game-subtitle").textContent = CONFIG.gameSubtitle;
+
+  const canvas = $("game-canvas");
+  const ctx = canvas.getContext("2d");
+  const W = canvas.width;
+  const H = canvas.height;
+  const scoreEl = $("game-score");
+  const livesEl = $("game-lives");
+  const overlay = $("game-overlay");
+  const overText = $("game-over-text");
+  const startBtn = $("game-start");
+
+  // Hevarinakki voi olla emoji tai kuva (img/...)
+  const badIsImg = /\.(png|jpe?g|webp|gif)$/i.test(CONFIG.gameBad);
+  let badImg = null;
+  if (badIsImg) {
+    badImg = new Image();
+    badImg.src = CONFIG.gameBad;
+  }
+
+  let playerX = W / 2;
+  let items = [];
+  let score = 0;
+  let lives = 0;
+  let running = false;
+  let lastSpawn = 0;
+  let flash = 0;
+  let lastTs = 0;
+
+  const movePlayer = (clientX) => {
+    const r = canvas.getBoundingClientRect();
+    playerX = Math.max(30, Math.min(W - 30, ((clientX - r.left) / r.width) * W));
+  };
+  canvas.addEventListener("pointermove", (e) => movePlayer(e.clientX));
+  canvas.addEventListener("touchmove", (e) => {
+    movePlayer(e.touches[0].clientX);
+    e.preventDefault();
+  }, { passive: false });
+
+  const updateHud = () => {
+    scoreEl.textContent = score;
+    livesEl.textContent = lives > 0 ? "❤️".repeat(lives) : "💔";
+  };
+
+  const spawn = () => {
+    const bad = Math.random() < 0.3;
+    items.push({
+      x: 30 + Math.random() * (W - 60),
+      y: -30,
+      bad,
+      v: (2.2 + Math.random() * 1.6) * (1 + score / 40),
+      size: 30 + Math.random() * 10,
+      wobble: Math.random() * Math.PI * 2,
+    });
+  };
+
+  const drawItem = (it) => {
+    if (it.bad && badImg && badImg.complete && badImg.naturalWidth) {
+      ctx.drawImage(badImg, it.x - it.size / 2, it.y - it.size / 2, it.size, it.size);
+    } else {
+      ctx.font = `${it.size}px serif`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(it.bad ? CONFIG.gameBad : CONFIG.gameGood, it.x, it.y);
+    }
+  };
+
+  const loop = (ts) => {
+    if (!running) return;
+    // aikapohjainen liike: sama vauhti 60 ja 120 Hz näytöillä
+    const dt = lastTs ? Math.min(3, (ts - lastTs) / 16.67) : 1;
+    lastTs = ts;
+    ctx.clearRect(0, 0, W, H);
+
+    if (flash > 0) {
+      ctx.fillStyle = `rgba(255, 80, 80, ${flash * 0.25})`;
+      ctx.fillRect(0, 0, W, H);
+      flash -= 0.1 * dt;
+    }
+
+    // spawnaus tihenee pisteiden karttuessa
+    const interval = Math.max(380, 900 - score * 14);
+    if (ts - lastSpawn > interval) {
+      spawn();
+      lastSpawn = ts;
+    }
+
+    items.forEach((it) => {
+      it.y += it.v * dt;
+      it.x += Math.sin(it.y / 40 + it.wobble) * 0.8 * dt;
+      drawItem(it);
+    });
+
+    // pelaajan kori
+    ctx.font = "46px serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(CONFIG.gameCatcher, playerX, H - 34);
+
+    // osumat
+    items = items.filter((it) => {
+      if (it.y > H - 66 && it.y < H - 6 && Math.abs(it.x - playerX) < 40) {
+        if (it.bad) {
+          lives--;
+          flash = 1;
+          updateHud();
+          if (lives <= 0) { end(); return false; }
+        } else {
+          score++;
+          updateHud();
+        }
+        return false;
+      }
+      return it.y < H + 40;
+    });
+
+    requestAnimationFrame(loop);
+  };
+
+  const end = () => {
+    running = false;
+    const t = CONFIG.gameOverTexts;
+    overText.textContent = `${score} pistettä! ` +
+      (score >= 25 ? t.great : score >= 10 ? t.ok : t.meh);
+    startBtn.textContent = "Pelaa uudestaan";
+    overlay.classList.remove("hidden");
+    if (score >= 25) confetti(innerWidth / 2, innerHeight / 2, 120);
+  };
+
+  startBtn.addEventListener("click", () => {
+    items = [];
+    score = 0;
+    lives = CONFIG.gameLives;
+    lastSpawn = 0;
+    flash = 0;
+    lastTs = 0;
+    updateHud();
+    overlay.classList.add("hidden");
+    running = true;
+    requestAnimationFrame(loop);
+  });
+
+  overText.textContent = "Nappaa sydämet, väistä nakkeja!";
+  lives = CONFIG.gameLives;
+  updateHud();
+})();
+
 /* ═══════════ KARTTA ═══════════ */
 (() => {
   $("map-title").textContent = CONFIG.mapTitle;

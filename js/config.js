@@ -74,6 +74,19 @@ Veeti ❤️`,
     { src: "img/galleria-3.svg", caption: "Kolmas muisto" },
   ],
 
+  // ── Sydänsade-peli ───────────────────────────────────────────
+  gameTitle: "Sydänsade 💘",
+  gameSubtitle: "Liikuta koria ja nappaa sydämet — mutta väistä hevarinakkeja!",
+  gameCatcher: "🧺",
+  gameGood: "❤️",
+  gameBad: "🌭",           // vaihda kuvaan: "img/hevarinakki.png"
+  gameLives: 3,
+  gameOverTexts: {
+    great: "Huikeaa! Sydämet ovat sinulla varmassa tallessa 😍",   // 25+ pistettä
+    ok: "Hyvä saalis! 💕 Vielä uusiksi?",                          // 10–24
+    meh: "Hevarinakit veivät voiton... kokeile uudestaan! 🌭",     // alle 10
+  },
+
   // ── Kartta ───────────────────────────────────────────────────
   mapTitle: "Meidän paikat 🗺️",
   mapSubtitle: "Napauta sydämiä nähdäksesi mitä niissä tapahtui",

@@ -715,6 +715,54 @@ body.locked { overflow: hidden; }
 
 .lightbox p { color: #fff; font-size: 1.15rem; margin-top: 14px; }
 
+/* ═══════════ SYDÄNSADE-PELI ═══════════ */
+.game-hud {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+  color: var(--primary);
+}
+
+.game-wrap {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+#game-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  border: 1.5px solid #f6c6ce;
+  background: linear-gradient(180deg, #fff3f5 0%, #ffe3ea 100%);
+  touch-action: none;
+  cursor: none;
+}
+
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(255, 248, 246, 0.88);
+  border-radius: 16px;
+}
+
+.game-overlay.hidden { display: none !important; }
+
+.game-overlay p {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  padding: 0 24px;
+}
+
 /* ═══════════ KARTTA ═══════════ */
 #map {
   height: min(440px, 60vh);
