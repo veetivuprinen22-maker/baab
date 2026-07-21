@@ -32,7 +32,7 @@ const CONFIG = {
 
   // ── Raaputuskuva ─────────────────────────────────────────────
   scratchTitle: "Eikö me ollakin söpöjä?",
-  scratchPhoto: "img/meidan-kuva.svg",        // vaihda omaan kuvaan (img-kansioon), esim. "img/me.jpg"
+  scratchPhoto: "img/meidan-kuva.jpg",        // vaihda omaan kuvaan (img-kansioon), esim. "img/me.jpg"
 
   // ── Rakkauskirje ─────────────────────────────────────────────
   letterTitle: "Kirje sinulle",
