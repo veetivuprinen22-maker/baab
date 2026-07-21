@@ -534,14 +534,23 @@ const confetti = (() => {
     });
   };
 
+  const drawEmoji = (emoji, it) => {
+    ctx.font = `${it.size}px serif`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(emoji, it.x, it.y);
+  };
+
   const drawItem = (it) => {
-    if (it.bad && badImg && badImg.complete && badImg.naturalWidth) {
-      ctx.drawImage(badImg, it.x - it.size / 2, it.y - it.size / 2, it.size, it.size);
+    if (it.bad && badIsImg) {
+      // nakki on kuva: piirrä kuva kun se on latautunut, muuten 🌭-varasymboli
+      if (badImg && badImg.complete && badImg.naturalWidth) {
+        ctx.drawImage(badImg, it.x - it.size / 2, it.y - it.size / 2, it.size, it.size);
+      } else {
+        drawEmoji("🌭", it);
+      }
     } else {
-      ctx.font = `${it.size}px serif`;
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      ctx.fillText(it.bad ? CONFIG.gameBad : CONFIG.gameGood, it.x, it.y);
+      drawEmoji(it.bad ? CONFIG.gameBad : CONFIG.gameGood, it);
     }
   };
 
