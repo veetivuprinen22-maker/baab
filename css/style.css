@@ -785,13 +785,34 @@ body.locked { overflow: hidden; }
 
 .leaflet-popup-content b { color: var(--primary); }
 
+.map-popup-gallery {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
 .map-popup-img {
   display: block;
   width: 200px;
   max-width: 100%;
   border-radius: 10px;
-  margin-bottom: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
 }
+
+.map-popup-gallery .map-popup-img {
+  width: 97px;
+  height: 120px;
+  object-fit: cover;
+  flex: 1;
+}
+
+.map-popup-gallery .map-popup-img:only-child {
+  width: 200px;
+  height: auto;
+}
+
+.map-popup-img:hover { transform: scale(1.03); }
 
 /* ═══════════ QUIZ ═══════════ */
 .quiz-progress {

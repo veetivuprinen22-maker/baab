@@ -79,7 +79,7 @@ Veeti ❤️`,
   gameSubtitle: "Liikuta koria ja nappaa sydämet — mutta väistä hevarinakkeja!",
   gameCatcher: "🧺",
   gameGood: "❤️",
-  gameBad: "🌭",           // vaihda kuvaan: "img/hevarinakki.png"
+  gameBad: "img/hevarinakki.png",
   gameLives: 3,
   gameOverTexts: {
     great: "Huikeaa! Sydämet ovat sinulla varmassa tallessa 😍",   // 25+ pistettä
@@ -94,7 +94,7 @@ Veeti ❤️`,
   mapPlaces: [
     { name: "Fontana, Vaasa", text: "Täällä näimme ensimmäisen kerran 11.9.2024 💫", lat: 63.0963, lng: 21.6147 },
     { name: "Babula <3", text: "", emoji: "🏠", lat: 63.0941, lng: 21.6178 },
-    { name: "The Grand Resort, Hurghada", text: "Ensimmäinen lomamatkamme 🌴", emoji: "✈️", lat: 27.1747, lng: 33.8231 },
+    { name: "The Grand Resort, Hurghada", text: "Ensimmäinen lomamatkamme 🌴", emoji: "✈️", imgs: ["img/hurghada-1.jpg", "img/hurghada-2.jpg"], lat: 27.1747, lng: 33.8231 },
     { name: "Sofia, Bulgaria", text: "Toinen lomamatkamme 🇧🇬", emoji: "✈️", lat: 42.6977, lng: 23.3219 },
     { name: "Niš, Serbia", text: "Roadtrip! Ajoimme tänne Sofiasta 🛣️", emoji: "🚗", lat: 43.3209, lng: 21.8958 },
     // Lisää paikkoja samalla kaavalla. "emoji" (oletus ❤️) ja "img" ovat

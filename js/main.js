@@ -3,6 +3,23 @@
 
 const $ = (id) => document.getElementById(id);
 
+/* Kuvan suurennus (lightbox) — jaettu galleria + kartta */
+function openLightbox(src, caption) {
+  const box = document.createElement("div");
+  box.className = "lightbox";
+  const big = document.createElement("img");
+  big.src = src;
+  big.alt = caption || "";
+  box.append(big);
+  if (caption) {
+    const p = document.createElement("p");
+    p.textContent = caption;
+    box.append(p);
+  }
+  box.addEventListener("click", () => box.remove());
+  document.body.appendChild(box);
+}
+
 /* ═══════════ TEKSTIEN ASETTELU ═══════════ */
 $("hero-name").textContent = CONFIG.heroName;
 $("hero-subtitle").textContent = CONFIG.heroSubtitle;
@@ -628,15 +645,24 @@ const confetti = (() => {
   });
 
   const bounds = [];
-  CONFIG.mapPlaces.forEach(({ name, text, lat, lng, emoji, img }) => {
+  CONFIG.mapPlaces.forEach(({ name, text, lat, lng, emoji, img, imgs }) => {
     const marker = L.marker([lat, lng], { icon: makeIcon(emoji) }).addTo(map);
     const content = document.createElement("div");
-    if (img) {
-      const image = document.createElement("img");
-      image.src = img;
-      image.alt = name;
-      image.className = "map-popup-img";
-      content.append(image);
+    // Tuki sekä yhdelle kuvalle (img) että usealle (imgs: [...])
+    const pics = imgs || (img ? [img] : []);
+    if (pics.length) {
+      const gallery = document.createElement("div");
+      gallery.className = "map-popup-gallery";
+      pics.forEach((src) => {
+        const image = document.createElement("img");
+        image.src = src;
+        image.alt = name;
+        image.className = "map-popup-img";
+        image.addEventListener("click", () => openLightbox(src, name));
+        image.onerror = () => image.remove(); // piilota jos kuva puuttuu
+        gallery.append(image);
+      });
+      content.append(gallery);
     }
     const b = document.createElement("b");
     b.textContent = name;
