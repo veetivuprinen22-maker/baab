@@ -96,7 +96,7 @@ Veeti ❤️`,
     { name: "Babula <3", text: "", emoji: "🏠", lat: 63.0941, lng: 21.6178 },
     { name: "Hurghada, Egypti", text: "Ensimmäinen lomamatkamme 🌴", emoji: "✈️", imgs: ["img/hurghada-1.jpg", "img/hurghada-2.jpg"], lat: 27.1747, lng: 33.8231 },
     { name: "Sofia, Bulgaria", text: "Toinen lomamatkamme 🇧🇬", emoji: "✈️", img: "img/sofia-1.jpg", lat: 42.6977, lng: 23.3219 },
-    { name: "Niš, Serbia", text: "Roadtrip! Ajoimme tänne Sofiasta 🛣️", emoji: "🚗", lat: 43.3209, lng: 21.8958 },
+    { name: "Niš, Serbia", text: "Roadtrip! Ajoimme tänne Sofiasta 🛣️", emoji: "🚗", img: "img/nis-1.jpg", lat: 43.3209, lng: 21.8958 },
     // Lisää paikkoja samalla kaavalla. "emoji" (oletus ❤️) ja "img" ovat
     // vapaaehtoisia — img näyttää kuvan kuplassa:
     // { name: "Paikka", text: "Muisto", emoji: "⭐", img: "img/kuva.jpg", lat: 0.0, lng: 0.0 },
