@@ -134,7 +134,7 @@ Veeti ❤️`,
   memoryTitle: "Muistipeli",
   memorySubtitle: "Etsi parit! Voit myöhemmin vaihtaa emojit meidän kuviin.",
   // Joko emojeja TAI kuvapolkuja (esim. "img/pari-1.jpg"). 6 kpl = 12 korttia.
-  memoryItems: ["❤️", "🌹", "img/pingu.jpg", "🍕", "🎬", "☕"],
+  memoryItems: ["❤️", "🌹", "img/pingu.jpg", "🍕", "🎬", "img/kissa.jpg"],
   memoryWinText: "Löysit kaikki parit! Aivan kuten löysit minut. 😌❤️",
 
   // ── Palkintopyörä ────────────────────────────────────────────
