@@ -89,7 +89,7 @@ Veeti ❤️`,
 
   // ── Kartta ───────────────────────────────────────────────────
   mapTitle: "Meidän paikat 🗺️",
-  mapSubtitle: "Napauta sydämiä nähdäksesi mitä niissä tapahtui",
+  mapSubtitle: "Napauta täpliä kartalla nähdäksesi mitä niissä tapahtui😄",
   // Kerro paikat (nimi + mitä siellä tapahtui), niin lisään koordinaatit.
   mapPlaces: [
     { name: "Fontana, Vaasa", text: "Täällä näimme ensimmäisen kerran 11.9.2024 💫", img: "img/fontana-1.jpg", lat: 63.0963, lng: 21.6147 },
