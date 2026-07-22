@@ -801,10 +801,10 @@ body.locked { overflow: hidden; }
 }
 
 .map-popup-gallery .map-popup-img {
-  width: 97px;
-  height: 120px;
+  width: 92px;
+  height: 118px;
   object-fit: cover;
-  flex: 1;
+  flex: 0 0 auto;
 }
 
 .map-popup-gallery .map-popup-img:only-child {

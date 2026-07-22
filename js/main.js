@@ -681,7 +681,9 @@ const confetti = (() => {
       p.textContent = text;
       content.append(p);
     }
-    marker.bindPopup(content);
+    // leveämpi kupla jos monta kuvaa, jotta kaikki mahtuvat valkoisen taakse
+    const popupWidth = pics.length >= 3 ? 380 : pics.length === 2 ? 260 : 240;
+    marker.bindPopup(content, { maxWidth: popupWidth, minWidth: pics.length >= 2 ? Math.min(popupWidth, 220) : 0 });
     bounds.push([lat, lng]);
   });
 
