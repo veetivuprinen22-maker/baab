@@ -100,6 +100,8 @@ Veeti ❤️`,
     { name: "Rio de Janeiro, Brasilia", text: "Nellan vaihto-opiskelupaikka 🇧🇷", emoji: "🎓", imgs: ["img/rio-1.jpg", "img/rio-2.jpg", "img/rio-3.jpg"], lat: -22.9252, lng: -43.1733 },
     { name: "Buenos Aires, Argentiina", text: "", emoji: "🇦🇷", lat: -34.6096, lng: -58.3888 },
     { name: "Montevideo, Uruguay", text: "", emoji: "🇺🇾", lat: -34.9059, lng: -56.1913 },
+    { name: "Tukholma, Ruotsi", text: "Pikavisiitti shoppaileen", emoji: "🇸🇪", lat: 59.3251, lng: 18.0711 },
+    { name: "Tallinna, Viro", text: "Pikku UV staycation", emoji: "🇪🇪", lat: 59.4372, lng: 24.7573 },
     // Lisää paikkoja samalla kaavalla. "emoji" (oletus ❤️) ja "img" ovat
     // vapaaehtoisia — img näyttää kuvan kuplassa:
     // { name: "Paikka", text: "Muisto", emoji: "⭐", img: "img/kuva.jpg", lat: 0.0, lng: 0.0 },
