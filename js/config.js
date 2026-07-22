@@ -154,8 +154,9 @@ Veeti ❤️`,
   bdayFrontText: "Hyvää synttäriä!",
   bdayInsideText: `Onnea ikiomalle tytölleni! 🎉
 
-Tähän voit kirjoittaa kortin sisään
-tulevan henkilökohtaisen viestin.
+Tässä vielä 150€ lahjakortti, jolla voi
+lunastaa jonkin yhteisen aktiviteetin
+esim. vesijetteily tai shoppailupäivä! ❤️
 
 Rakkaudella,
 Veeti`,
