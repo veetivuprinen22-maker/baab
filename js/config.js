@@ -71,7 +71,7 @@ Veeti ❤️`,
     // Lisää kuvia img-kansioon ja listaa ne tähän:
     { src: "img/galleria-1.jpg", caption: "Oli tosi kiva päivä Suomenlinnassa☀️" },
     { src: "img/galleria-2.jpg", caption: "Tässä tehdään hevarinakkeja😝" },
-    { src: "img/galleria-3.svg", caption: "Kolmas muisto" },
+    { src: "img/galleria-3.jpg", caption: "Blub blub🐠🐡" },
   ],
 
   // ── Sydänsade-peli ───────────────────────────────────────────
