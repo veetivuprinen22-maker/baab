@@ -74,6 +74,7 @@ Veeti ❤️`,
     { src: "img/galleria-3.jpg", caption: "Blub blub🐠🐡" },
     { src: "img/galleria-4.jpg", caption: "Matkalla Bulgariaan" },
     { src: "img/galleria-5.jpg", caption: "Baabsin synttärit🥳" },
+    { src: "img/galleria-6.jpg", caption: "Picnicc🍓🍫🍕" },
   ],
 
   // ── Sydänsade-peli ───────────────────────────────────────────
