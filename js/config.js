@@ -72,6 +72,7 @@ Veeti ❤️`,
     { src: "img/galleria-1.jpg", caption: "Oli tosi kiva päivä Suomenlinnassa☀️" },
     { src: "img/galleria-2.jpg", caption: "Tässä tehdään hevarinakkeja😝" },
     { src: "img/galleria-3.jpg", caption: "Blub blub🐠🐡" },
+    { src: "img/galleria-4.jpg", caption: "Matkalla Bulgariaan" },
   ],
 
   // ── Sydänsade-peli ───────────────────────────────────────────
