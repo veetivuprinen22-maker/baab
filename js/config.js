@@ -162,7 +162,8 @@ Veeti ❤️`,
 
 Tässä vielä 150€ lahjakortti, jolla voi
 lunastaa jonkin yhteisen aktiviteetin
-esim. vesijetteily tai shoppailupäivä! ❤️
+esim. vesijetteily, hotelliyö tai
+shoppailupäivä! ❤️
 
 Rakkaudella,
 Veeti`,
