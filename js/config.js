@@ -28,7 +28,7 @@ const CONFIG = {
   cakeSubtitle: "Sammuta kynttilät napauttamalla niitä ja toivo jotain",
   cakeCandles: 5,                             // kynttilöiden määrä (esim. ikä)
   cakeDoneText: "Kaikki sammutettu! Toiveesi on matkalla... ✨❤️",
-  cakeText: "Nella ❤️",                       // teksti kakun kyljessä
+  cakeText: "",                               // teksti kakun kyljessä (tyhjä = ei tekstiä)
 
   // ── Raaputuskuva ─────────────────────────────────────────────
   scratchTitle: "Eikö me ollakin söpöjä?",
